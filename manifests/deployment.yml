@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "myk8scluster-c7d4"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "myk8scluster-c7d4"
+  template:
+    metadata:
+      labels:
+        app: "myk8scluster-c7d4"
+    spec:
+      containers:
+        - name: "myk8scluster-c7d4"
+          image: "godadaycontainer.azurecr.io/myk8scluster"
+          ports:
+          - containerPort: 80
